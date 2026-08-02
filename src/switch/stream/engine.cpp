@@ -814,8 +814,11 @@ bool Engine::run_peer(GssvSession& session) {
         // 720p caps verbatim and H264 level 3.2 (42e020) instead of 3.1 --
         // the console agent is stricter than the xCloud servers.
         size_t at = munged.find("profile-level-id=42e01f");
-        if (at != std::string::npos) munged.replace(at + 17, 6, "42e020");
-        log("home offer sdp:\n" + munged);
+        if (at != std::string::npos) munged.replace(at + 17, 6, "42e02a"); 
+        if (tier_ != QualityTier::P720) {
+        munged = sdp_scale_video_caps_1080(munged); 
+    }
+    log("home offer sdp:\n" + munged);
     } else if (tier_ == QualityTier::P1440 ||
                tier_ == QualityTier::P1440HQ) {
         // Ask for 1440p60. The server may answer with 1080p; the decoder and
