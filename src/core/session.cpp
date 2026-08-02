@@ -192,7 +192,7 @@ void GssvSession::start_home(const std::string& server_id) {
           {"useIceConnection", false},
           {"timezoneOffsetMinutes", 120},
           {"sdkType", "web"},
-          {"osName", os_name(tier_)}}},
+          {"osName", "android"}}},
         {"serverId", server_id},
         {"fallbackRegionNames", json::array()},
     };
