@@ -1,4 +1,4 @@
-# green-nx
+# shitch  xbox  game pass
 
 A standalone, open-source **Xbox Cloud Gaming (xCloud) client for the Nintendo
 Switch** (homebrew). Sign in with your Microsoft account and stream your Game
@@ -7,7 +7,7 @@ GPU rendering are all done on the console, with no companion apps or PCs
 involved.
 
 **Fully working:** sign-in, game library with box art and search, and smooth
-720p / 1080p / 1080p HQ streaming with audio and full controller input.
+720p / 1080p / 1080p HQ 1440p streaming with audio and full controller input.
 
 ## Features
 
@@ -19,7 +19,7 @@ involved.
 - **Hardware H.264 decoding** (NVDEC via FFmpeg's NVTEGRA hwaccel) with
   **zero-copy GPU rendering** (deko3d) — the decoded surface goes straight
   from the decoder to the screen
-- Opus audio, 60 fps video, three quality tiers (720p / 1080p / 1080p HQ)
+- Opus audio, 60 fps video, three quality tiers (720p / 1080p / 1080p HQ  /1440p)
 
 ## Requirements
 
@@ -31,18 +31,18 @@ involved.
 
 ## Install
 
-1. Copy `green-nx.nro` to `sdmc:/switch/` on your SD card.
+1. Copy `xbox.nsp` to `sdmc:/switch/xbox/` on your SD card.
 2. Launch **in title mode** — hold **R** while starting an installed game.
    (Applet mode does not have enough memory for hardware video decoding.)
 3. Sign in once with the device code shown on screen (`microsoft.com/link`).
-   Tokens and the game list are cached in `sdmc:/switch/green-nx/`.
+   Tokens and the game list are cached in `sdmc:/switch/xbox/`.
 
 ### Controls
 
 | Context | Buttons |
 | --- | --- |
 | Library | Left stick / d-pad move · **A** play · **Y** search · **X** refresh · **ZL** settings · **-** sign out · **+** exit |
-| Settings | Stream quality (720p / 1080p / 1080p HQ) · button layout (positional / labels) |
+| Settings | Stream quality (720p / 1080p / 1080p HQ 1440p) · button layout (positional / labels) |
 | In stream | Xbox controls mapped from the Switch pad · hold **-** + **+** to quit |
 
 ## Build
@@ -75,7 +75,7 @@ deps/                build script + patches for the WebRTC stack
 
 ## Third-party software
 
-green-nx builds on these open-source projects:
+xbox builds on these open-source projects:
 
 | Project | License | Use |
 | --- | --- | --- |
@@ -96,7 +96,7 @@ REMB, data-channel fixes, Switch port) are in `deps/patches/`.
 
 ## Disclaimer
 
-green-nx is a **fun, experimental, non-commercial** hobby project, provided
+xbox  is a **fun, experimental, non-commercial** hobby project, provided
 as-is for personal use. It is **not affiliated with, endorsed by, or supported
 by Microsoft or Nintendo** in any way. Xbox, Xbox Cloud Gaming and Game Pass
 are trademarks of Microsoft. Nintendo Switch is a trademark of Nintendo. You
