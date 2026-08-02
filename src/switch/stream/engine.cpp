@@ -665,8 +665,7 @@ void Engine::worker() {
             // Home: the console agent only accepts the android fingerprint
             // (green-vita, the working reference, always sends it) -- the
             // windows/tizen quality-tier fingerprints get AgentCommandError.
-            GssvSession session(http_, cloud_,
-                                home ? QualityTier::P720 : tier_, locale_);
+            GssvSession session(http_, cloud_, tier_, locale_);
             if (home)
                 session.start_home(home_server_id_);
             else
