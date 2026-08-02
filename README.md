@@ -1,4 +1,4 @@
-# shitch  xbox  game pass
+# switch  xbox  game pass
 
 A standalone, open-source **Xbox Cloud Gaming (xCloud) client for the Nintendo
 Switch** (homebrew). Sign in with your Microsoft account and stream your Game
