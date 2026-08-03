@@ -1270,7 +1270,7 @@ void Engine::decode_loop() {
                     AVFrame* queued = av_frame_clone(video_.current_frame());
                     if (queued)
                         smooth_frames_.push_back({queued, shared_frame_seq_});
-                    while (smooth_frames_.size() > 4) {
+                    while (smooth_frames_.size() > 2) {
                         SmoothFrame stale = smooth_frames_.front();
                         smooth_frames_.pop_front();
                         if (stale.frame) av_frame_free(&stale.frame);
@@ -1327,7 +1327,7 @@ SDL_Texture* Engine::pump_video() {
                            ++smooth_refresh_phase_ >= period;
                 // >= 2 keeps one decoded frame in reserve so a late arrival
                 // becomes a queue dip, not a visible repeat.
-                if (due && smooth_frames_.size() >= 2) {
+                if (due && smooth_frames_.size() >= 1) {
                     SmoothFrame next = smooth_frames_.front();
                     smooth_frames_.pop_front();
                     av_frame_unref(present_frame_);
