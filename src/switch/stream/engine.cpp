@@ -1327,7 +1327,7 @@ SDL_Texture* Engine::pump_video() {
                            ++smooth_refresh_phase_ >= period;
                 // >= 2 keeps one decoded frame in reserve so a late arrival
                 // becomes a queue dip, not a visible repeat.
-                if (due && smooth_frames_.size() >= 1) {
+                if (due && smooth_frames_.size() >= 2) {
                     SmoothFrame next = smooth_frames_.front();
                     smooth_frames_.pop_front();
                     av_frame_unref(present_frame_);
